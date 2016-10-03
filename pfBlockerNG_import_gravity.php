@@ -45,11 +45,12 @@ require_once("globals.inc");
 require_once("services.inc");
 
 print "";
-$pfblist_new                     = array (
+$pfblist_new=array (
 			array ("none"        => "",
 			"aliasname"          => "Level_1",
 			"description"        => "Provides security against Phishing, Malware and Fraud typical for outbound traffic",
 			"infolists"          => "",
+			"row"                => array (
 				array ("format"  => "auto",
 					"state"      => "Enabled",
 					"url"        => "http://hosts-file.net/psh.txt",
@@ -202,6 +203,12 @@ $pfblist_new                     = array (
 					"state"      => "Enabled",
 					"url"        => "http://cinsscore.com/list/ci-badguys.txt",
 					"header"     => "ciarmy")),
+            "action"             => "disabled",
+            "cron"               => "01hours",
+            "dow"                => "1",
+            "aliaslog"           => "enabled",
+            "custom"             => "",
+            "custom_update"      => "disabled"),
 			array ("none"        => "",
 			"aliasname"          => "Level_2",
 			"description"        => "Provides security against well known attackers with the minimum of false positives, use with Level_1",
